@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import MovieList from "./movies/MovieList";
+import { inTheaters, upcomingReleases } from "./movies/moviesData";
+import { landingPageDTO } from "./movies/movie.model";
 
 function App() {
+  const [movies, setMovies] = useState<landingPageDTO>({});
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setMovies({
+        inTheaters: inTheaters,
+        upcomingReleases: upcomingReleases,
+      });
+    }, 2000);
+    return () => clearTimeout(timerId);
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h3>In theaters</h3>
+
+      <MovieList movies={movies.inTheaters} />
+      <h3>Upcoming releases</h3>
+      <MovieList movies={movies.upcomingReleases} />
     </div>
   );
 }
