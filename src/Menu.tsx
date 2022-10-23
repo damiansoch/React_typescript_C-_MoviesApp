@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
@@ -13,6 +13,28 @@ const Menu = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/genres">
                 Genres
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/actors">
+                Actors
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/theaters">
+                Theaters
+              </Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav ">
+            <li className="nav-item">
+              <Link className="nav-link" to="/movies/create">
+                Add Movie
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/movies/filter">
+                Search movie
               </Link>
             </li>
           </ul>

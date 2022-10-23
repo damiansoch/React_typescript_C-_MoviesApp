@@ -1,13 +1,15 @@
-import IndexGenres from "./genres/IndexGenres";
-import LandingPage from "./movies/LandingPage";
+import IndexGenres from './genres/IndexGenres';
+import LandingPage from './movies/LandingPage';
 
-export const routes = [
+const routes = [
   {
-    path: "/genres",
+    path: '/genres',
     component: IndexGenres,
   },
   {
-    path: "/",
+    path: '/',
     component: LandingPage,
   },
 ];
+
+export default routes;
