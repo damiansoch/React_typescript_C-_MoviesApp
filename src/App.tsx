@@ -16,6 +16,9 @@ import EditTheater from './movieTheaters/EditTheater.';
 import CreateMovie from './movies/CreateMovie';
 import EditMovie from './movies/EditMovie';
 import FilterMovies from './movies/FilterMovies';
+import configureValidations from './Validations';
+
+configureValidations();
 
 function App() {
   return (
